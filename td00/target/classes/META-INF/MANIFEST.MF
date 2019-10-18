@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Built-By: chousa18
+Build-Jdk: 11.0.3
+Main-Class: fr.dauphine.ja.ChoubaneSamia.td00.App
+Created-By: Maven Integration for Eclipse
+

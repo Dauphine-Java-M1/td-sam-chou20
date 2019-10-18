@@ -1,0 +1,53 @@
+Samia CHOUBANE 
+
+4 : la commande qui permet de trouver la versin est : 
+		mvn -v ou bien mvn --version 
+    La version installé est : Apache Mavene 3.6.0 > 3.0
+
+6 : Le répertoire target contient deux repertoires :
+	. classes
+	. maven-status
+
+	apres ajout des lignes suivantes dans le POM 
+	
+	<properties>
+	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	<maven.compiler.source>1.7</maven.compiler.source>
+	<maven.compiler.target>1.7</maven.compiler.target>
+	</properties>
+
+	Le repertoire 
+		. generated sources 
+	est Créé
+
+
+8 : La commande -cp permet de specifier un class Path 
+	un class Path est une variable composée de plusieurs chemin (path), les chemins désignent soit des répertoires soit des des fichiers jar. 
+
+A quoi sert il ?
+	il est utilisé par le compilateur et la machine viertuelle java pour retrouver les classes dont a besoin le programme (Dans notre cas App)
+
+
+
+13 : lors de la compilation d'un projet dans une version differente de celle que nous utilisons acuellement le javac peut accepter une telle commande en utilisant maven.compiler.sources et maven.compiler.target
+
+	si on souhaite utiliser les fonctionnalité du langage Java 7 on ajoute (maven.compiler.sources 1.7) et si on souhaite également que les classes compilées soient compatibles avec JVM 1.7 on rajoute maven.compiler.target 1.7  
+
+	On doit lui donner la valeur 1.7
+
+
+
+____________________________________________________________________________________________________________________
+				Exercice 2. Archives JAR et Maven JAR Plugin
+____________________________________________________________________________________________________________________
+
+
+
+1 : lorsqu'on exécute le fichier jar avec la commande java -jar target/ td00-1.0-SNAPSHOT.jar le message suivant s'affiche :
+
+aucun attribut manifest principal dans target/td00-1.0-SNAPSHOT.jar
+
+
+
+
+ 
