@@ -8,7 +8,7 @@ import java.util.ArrayList;
  */
 public class PrimeCollection
 {
-	ArrayList<Integer> numbers = new ArrayList<Integer>();
+	private ArrayList<Integer> numbers = new ArrayList<Integer>();
 	
 	
 
@@ -39,6 +39,7 @@ public class PrimeCollection
 	public static void main( String[] args )
     {
 
+		System.out.println(" hello ");
  	
     }
     
