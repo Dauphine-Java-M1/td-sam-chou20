@@ -1,4 +1,5 @@
 Samia CHOUBANE 
+test de modification sur le repertoire clone 
 
 4 : la commande qui permet de trouver la versin est : 
 		mvn -v ou bien mvn --version 
@@ -50,7 +51,7 @@ aucun attribut manifest principal dans target/td00-1.0-SNAPSHOT.jar
 
 
 
-test de modification sur le repertoire clone 
+
 
 
 
