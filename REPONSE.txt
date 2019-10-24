@@ -50,4 +50,9 @@ aucun attribut manifest principal dans target/td00-1.0-SNAPSHOT.jar
 
 
 
+test de modification sur le repertoire clone 
+
+
+
+
  
