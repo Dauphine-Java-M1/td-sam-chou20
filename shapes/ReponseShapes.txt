@@ -1,0 +1,223 @@
+Samia Choubane 
+
+Exercice 1. Point .................................
+
+
+1. 
+	Point p=new Point();
+	System.out.println(p.x+" "+p.y)
+
+	Cela fonctionne car les deux variables privés x et y  sont appelés à partir de  la meme classe ou elles sont déclarée 
+
+
+2. Creer une classe TestPoint avec un main et le meme code que precedemment:
+	
+	Erreur de compilation, the fild p.x et p.y is not visible.
+	pour y remeddier deux sollution s'offre à nous : 
+	1.) Soit rendre les variables x et y public  et y acceder de l'exterieur de la classe (chose à ne pas faire !!!)
+	2.) fournir au public des méthodes get et set pour accéder à la valeur de x et y (private) et la mettre à jour  (créer des accesseurs et mutateurs )
+	
+	
+
+
+3.	Il faut toujours que les champs d'une classe soit privés afin de les protéger, aucun accés à ces variables privés est possible de l'exterieur de cette classe sauf en passant par les accesseur & mutateurs pour la modification (getter et setter)et si un utilisateur souhaite modifier une varriable il est obligé de se plier à la logique du programme donc pas d'incohérence 
+	C'est tout le principe de l'encapsulation. 
+	
+	
+4.  Un accesseur est une méthode qui va nous permettre d'accéder aux variables de nos objets en lecture.
+	Oui nous devons le faire ici afin de pouvoir accéder aux variables x et y en lecture via l'appel de fonction :  p.getX() +" "+ p.getY()
+	
+			    public int getX(){
+			    	return x;
+			    }
+			    
+				public int getY() {
+					return y;
+				}
+	
+5. Créeation d'un constructeur :
+			public Point (int px , int py){
+			this.x= px;
+			this.y=py;
+			}
+			
+			
+	Problème : Point p= new Point();  // erreur de compilation 
+	plus de constructeur par defaut(sans paramettre).
+	
+	
+6.	Modifier les paramétres du constructeur pour les appeler x et y. Que se passe-t-i?
+	Toujours la meme erreur de compilation !!
+	
+	
+
+
+7. Pour connaitre le nombre de point créés il faut créér une variable static count qui s'incremante à chaque instanciation d'un objet Point ( qui va s'incremanter dans le constructeur)
+	
+		private static int count =0;
+	
+		public Point (int x , int y){
+		count++;
+		this.x= x;
+		this.y=y;
+		
+	}
+	
+	
+	
+	
+8. Constructeur prenant un point en argument et utilisant les coordonnées de ce dernier pour la créeation.
+	
+	
+	public Point (Point p){
+		this.x = p.getX();
+		this.y= p.getY();
+	}	
+	
+	
+	le compilateur sait quel constructeur appeler en fonction des argument entrés en paramettre lors de l'instanciation de l'objet Point.
+	
+	
+9. Affin que l'appel à system.out.pritln(point) affiche les coordonnées du point comme ceci (x,y) il faut redéfinir la méthode toString()
+
+			@Override
+			public String toString() {
+		
+			return "(" + x + "," + y + ")";
+			}
+			
+			
+			
+			
+			
+			
+			
+Exercice 2. Egalité .................................
+
+1.  	Point p1 = new Point(1,2);
+		Point p2=p1;
+		Point p3 = new Point(1,2);
+		
+		System.out.println(p1==p2);  // Affiche True 
+		System.out.println(p1==p3);	 // Affiche False
+		
+		Parce que l'opérateur == sur le type Objet teste les réferences !!
+		p1 et p2 ont la meme reference car pour le point p2 on lui a affecté dirrectement p1 (les deux objets pointent sur la meme reference)
+		mais pour P3 on a instancier un nouvel object Point avec new donc une nouvelle reference pour p3 diffrente de p1 meme si les valeurs des objets sont les memes(les deux objets p1 et p3 pointent sur des references differentes)
+		
+		
+ 
+ 2. Ecrire une methode isSameAs(Point) renvoyant true si deux points ont lesmemes coordonnées:
+ 
+ 		public boolean isSameAs(Object o){
+		if (!(o instanceof Point))return false;
+		Point p = (Point)o;
+		return p.x==this.x &&  p.y==this.y ;
+		}
+		
+		
+3. Quel est le probleme ? Lire la doc d'indexOf et indiquer quelle methode est appelee. Modier la classe Point pour resoudre le probleme.
+		indexOf : retourne l'index de la première occurence de l'element spécifié dans cette liste, ou -1 si cette liste ne contient pas l'element 
+		la methode appelée est equals 
+		
+		?
+		?
+		? A faire !!!!!!
+		?
+		
+
+
+
+
+	
+
+Exercice 3. Ligne brisée .................................
+
+1. Constructeur de la ligne brisée : 
+
+			public LigneBrisée  (int capacité){
+				this.capacité=capacité;
+				this.tab = new Point[capacité];
+			 
+			}
+			
+2.  la methode AddPoint() permettant d'ajouter un point à la ligne brisée : 
+		
+			
+			public void AddPoint(int index , Point p){
+					if ( index <tab.length ){
+									
+					tab[index]= p;
+					
+					count++;
+					
+				}else {System.out.println("impossible d'ajouter le point :"+p + "  \n >>>>> dépassement de la capassité du tableau !!!!!");}
+			}
+			
+	Si l'on dépasse la capacité fixée cette erreur s'affiche : Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 4
+	
+	afin d'éviter cela il faut vérifier la validé de la capacité du tableau : // if ( index <tab.length )
+
+
+	
+4. la méthode Contains :   ?????????????????????????????????
+
+		pourquoi ca ne marche pas !!!!!!!!!!!!!!!!!!!!!
+
+
+				public boolean contains(Point point){
+		boolean bool =false;
+		
+		for (Point p : tab ){
+			if ( p.equals(point) ) 
+					///if (p.hashCode()==point.hashCode())
+				 bool = true;
+			
+		}
+		return bool ;
+	}
+	
+	
+	??????????????????????????????????????????????????????????
+	Exception in thread "main" java.lang.NullPointerException
+	??????????????????????????????????????????????????????????
+	
+	
+	
+5. Que se passe t-il si null est passée en argument à la méthode contains? Et si on a fait un add(null) avant ? Regarder la documentation de Objects.requireNonNull(o).
+
+
+
+
+
+
+
+
+
+
+
+
+6.  La linkedList n'a pas de limite de capacité, du coup pointCapacity et nbPoints vont renvoyer le meme entier qui est la taille de la liste avec la fonction .size()
+	
+			public int nbpoint(){
+				return listPoint.size();
+			}
+	
+	
+	Pour contains on fait appel dirrectement à la fonction contains de notre objet qui va verifier si l'objet Point entré en paramètre existe dans la LinkedList renvoi True si oui, false sinon
+
+		public boolean contains(Point point){
+				return listPoint.contains(point);
+	}
+
+
+
+
+
+
+
+
+
+Exercice 4. Mutabilité et cercle.................................
+
+	
