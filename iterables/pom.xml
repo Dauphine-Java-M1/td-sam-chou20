@@ -38,7 +38,7 @@
 	<configuration>
 	<archive>
 	<manifest>
-	<mainClass>fr.dauphine.ja.ChoubaneSamia.iterables.App</mainClass>
+	<mainClass>fr.dauphine.ja.ChoubaneSamia.iterables.PanelTest</mainClass>
 	<addClasspath>true</addClasspath>
 	<classpathPrefix>lib</classpathPrefix>
 	</manifest>
