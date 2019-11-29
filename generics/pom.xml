@@ -36,7 +36,7 @@
 <configuration>
 <archive>
 <manifest>
-<mainClass>fr.dauphine.ja.ChoubaneSamia.generics.App</mainClass>
+<mainClass>fr.dauphine.ja.ChoubaneSamia.generics.Maximums</mainClass>
 <addClasspath>true</addClasspath>
 <classpathPrefix>lib</classpathPrefix>
 </manifest>
