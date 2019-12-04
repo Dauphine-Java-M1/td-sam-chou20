@@ -8,13 +8,15 @@ public class Maximums {
 	
 	
 	
-	private  static  int Max(Integer first, Integer...tab)  {
+	private  static  int myMax(Integer first, Integer...tab)  {
 		
-		if (tab.length==0) {
-			throw new IllegalArgumentException("tableau vide !!!! ");
-		}
+		/*
+			if (tab == null || tab.length == 0){
+				throw new IllegalArgumentException("tableau vide");
+			}
+		 */
 		
-		int max = tab[0];
+		int max = first;
 		
 		for (int i : tab ) {
 			if (i > max) {
@@ -22,35 +24,20 @@ public class Maximums {
 			}	
 		}
 		return max ;
-		
-		
-		
-		
 	}
 	
 	
-	/*
-	private static  <T> max(T implements Comparable<T>...tab ){
-		T t;
+	public static < T extends Comparable<T> > T myMax(T first, T...tab){
+		T max = first ;
 		
-		if (tab.length==0) {
-			throw new IllegalArgumentException("tableau vide !!!! ");
+		for (T t : tab){
+			if(t.compareTo( max )==1){
+				max= t;
+			}
 		}
 		
-		int max = tab[0];
-		
-		for (T i : tab ) {
-			if (max.co) {
-				max=i;
-			}	
-		}
-		return max ;
-		
-		
-		return t;
+		return max;
 	}
-	
-  */
 	
 
 	
@@ -75,15 +62,15 @@ public class Maximums {
 	
 	public static void main(String[] args) {
 		
-		System.out.println(Max(42,1664));
-		System.out.println(Max(2014,86,13));
-		// System.out.println(Max());
+		System.out.println(myMax(42,1664));
+		System.out.println(myMax(2014,86,13));
+		//System.out.println(myMax());
 		
 		
-		
+		/*
 		List<String> list = Arrays.asList("foo","toto");
 		print(list);
-		
+		*/
 		
 		List l=Arrays.asList("colonel", "reyel");
 		System.out.println(listLength(l));
